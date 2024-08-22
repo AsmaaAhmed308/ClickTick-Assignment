@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from './login.service';
-import { takeUntil } from 'rxjs/internal/operators/takeUntil';
 import { Subject } from 'rxjs/internal/Subject';
+import { RestApiService } from '../rest-api-services/rest-api-serices.service';
 
 @Component({
   selector: 'app-login',
@@ -20,11 +19,12 @@ export class LoginComponent {
   password: string = '';  
   errorMessage: string = '';  
   //-------------------------------
-  constructor( private _LoginService :   LoginService ,
-               private router: Router) {}
+  constructor(  private router: Router,
+                private  _RestApiService  : RestApiService
+  ) {}
   
   signIn() {  
-    this._LoginService.getLoginData()
+     this._RestApiService.getLoginData()
   }  
 
 } 

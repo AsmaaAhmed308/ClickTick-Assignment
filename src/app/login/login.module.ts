@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';  
 import { LoginComponent } from './login.component';
 import { AppRoutingModule } from '../app.routes';
-import { LoginService } from './login.service';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({  
   declarations: [  
-    LoginComponent,  
+    LoginComponent  
   ],  
   imports: [  
     BrowserModule, 
-    AppRoutingModule, // Add the routing module here  
-    HttpClientModule
+    AppRoutingModule ,
+    
   ],  
   providers: [],  
   bootstrap: [LoginComponent]  
