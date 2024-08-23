@@ -56,7 +56,7 @@ export class LoginComponent {
   }
 
   checkLoginUserAuthuntication() {
-    
+    //checkLoginUserAuthuntication
     this.loginUserAuthenticationData = this.usersArr.find(user => user['email'] == this.email && user['password'] && this.password)
     if (this.loginUserAuthenticationData) {
       console.log('Succesful , Authentication is exisit')
