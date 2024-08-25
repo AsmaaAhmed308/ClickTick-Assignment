@@ -1,0 +1,46 @@
+.navbar {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 10px 20px;  
+    background-color: rgba(247, 247, 247, 0.47); /* Semi-transparent background color */  
+    border-bottom: 2px solid #ccc; /* Bottom border */  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */  
+}  
+
+.navbar-left, .navbar-right {  
+    display: flex;  
+    align-items: center;  
+}  
+
+.logo {  
+    position: relative; /* Position relative for absolute positioning of the logo */  
+    margin-right: 15px; /* Space between logo and text */  
+    padding: 10px 15px; /* Add some padding for better hover area */  
+    border-radius: 5px; /* Rounded corners for a smoother look */  
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */  
+}  
+
+.logo svg {  
+    position: absolute; /* Position the SVG logo absolutely */  
+    left: 0; /* Align to the left */  
+    top: 50%; /* Center vertically */  
+    transform: translateY(-50%); /* Adjust for vertical centering */  
+    opacity: 0.2; /* Make the logo semi-transparent */  
+    width: 30px; /* Adjust size as needed */  
+    height: 30px; /* Adjust size as needed */  
+}  
+
+.tab {  
+    margin: 0 15px; /* Space between items */  
+    cursor: pointer; /* Change cursor to pointer on hover */  
+    padding: 10px 15px; /* Add some padding for better hover area */  
+    border-radius: 5px; /* Rounded corners for a smoother look */  
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */  
+}  
+
+.logo:hover, .tab:hover {  
+    background-color: gray; /* Change background color on hover */  
+    color: white; /* Optional: Change text color on hover */  
+    transform: scale(1.05); /* Slightly scale up the element on hover */  
+}

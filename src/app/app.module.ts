@@ -4,6 +4,7 @@ import { provideHttpClient } from '@angular/common/http'; // Ensure this is incl
 import { AppComponent } from './app.component';  
 import { AppRoutingModule } from './app.routes';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({  
   declarations: [  
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule 
   ],  
   providers: [  
-    provideHttpClient()  // Ensure this is set up correctly  
+    provideHttpClient()  
   ],  
   bootstrap: [AppComponent]  
 })  
