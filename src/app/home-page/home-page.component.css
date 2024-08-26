@@ -1,41 +1,109 @@
-.card-list {  
-    display: flex;  
-    flex-wrap: wrap;  
-    justify-content: space-around;  
-    padding: 20px;  
-  
-    .card {  
-      background-color: #fff;  
-      border: 1px solid #ddd;  
-      border-radius: 8px;  
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
-      margin: 10px;  
-      width: 200px;  
-      transition: transform 0.2s;  
-  
-      &:hover {  
-        transform: scale(1.05);  
-      }  
-  
-      .card-image {  
-        border-top-left-radius: 8px;  
-        border-top-right-radius: 8px;  
-        width: 100%;  
-        height: auto;  
-      }  
-  
-      .card-content {  
-        padding: 15px;  
-  
-        .card-title {  
-          font-size: 1.2em;  
-          margin: 0;  
-        }  
-  
-        .card-description {  
-          font-size: 0.9em;  
-          color: #666;  
-        }  
-      }  
-    }  
-  }
+.container {  
+  margin: 0 auto;  
+  padding: 1rem; /* Equivalent to p-4 */  
+}  
+
+.flex {  
+  display: flex;  
+  flex-direction: row;  
+  margin-bottom: 2rem; /* Equivalent to mb-8 */  
+}  
+
+.category-list {  
+  width: 33.33%; /* 1/3 of the width */  
+  max-width: 250px; /* Optional for better control */  
+  border: 1px solid #ccc; /* Border color and style */  
+  border-radius: 0.5rem; /* Rounded corners for the border */  
+  padding: 1rem; /* Padding inside the border */  
+  background-color: #fff; /* Optional: background color */  
+  margin-right: 20px;
+  height: fit-content;
+}  
+
+.category-list .grid {  
+  display: grid;  
+  grid-template-columns: 1fr; /* Single column for the grid */  
+  gap: 1rem; /* Equivalent to gap-4 */  
+}  
+
+.radio-buttons {  
+  flex-direction: column; /* Stack radio buttons vertically */  
+}  
+
+.radio-buttons label {  
+  display: flex;  
+  align-items: center; /* Center align items */  
+}  
+/* 
+.product-cards {  
+  width: 66.67%;         
+}   */
+
+.product-cards .grid {  
+  display: grid;  
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on larger screens */  
+  gap: 1rem; /* Equivalent to gap-4 */  
+}  
+
+.card {  
+  background-color: #ffffff; /* Equivalent to bg-white */  
+  border-radius: 0.5rem; /* Equivalent to rounded-lg */  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-lg */  
+  overflow: hidden; /* Equivalent to overflow-hidden */  
+  transition: transform 0.2s; /* For smooth scaling */  
+}  
+
+.card-image {  
+  width: 100%;  
+  height: 12rem; /* Equivalent to h-48 */  
+  object-fit: cover; /* Ensures the image covers the area */  
+}  
+
+.card-content {  
+  padding: 1rem; /* Equivalent to p-4 */  
+}  
+
+.card-title {  
+  font-size: 1.125rem; /* Equivalent to text-lg */  
+  font-weight: 600; /* Equivalent to font-semibold */  
+}  
+
+.card-description {  
+  color: #4a5568; /* Equivalent to text-gray-600 */  
+}
+.card:hover {  
+  transform: scale(1.05); /* Equivalent to hover:scale-105 */  
+} 
+
+
+
+@media (min-width: 640px) {  
+  .grid {  
+      grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */  
+  }  
+}  
+
+@media (min-width: 768px) {  
+  .grid {  
+      grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */  
+  }  
+}  
+
+@media (min-width: 1024px) {  
+  .grid {  
+      grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */  
+  }  
+}  
+.add-to-cart-button {  
+  margin-top: 1rem; /* Equivalent to mt-4 */  
+  background-color: #4299e1; /* Equivalent to bg-blue-500 */  
+  color: #ffffff; /* Equivalent to text-white */  
+  font-weight: bold; /* Equivalent to font-bold */  
+  padding: 0.5rem 1rem; /* Equivalent to py-2 px-4 */  
+  border-radius: 0.25rem; /* Equivalent to rounded */  
+  transition: background-color 0.2s; /* For smooth hover effect */  
+}  
+
+.add-to-cart-button:hover {  
+  background-color: #3182ce; /* Equivalent to hover:bg-blue-600 */  
+}  
