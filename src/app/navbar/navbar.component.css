@@ -66,4 +66,19 @@ input[type=text] {
     background-image: url('../../assets/search-icon.png');
 
   }
+
+ .circle-count {
+    height: 20px;
+    width: 20px;
+    background-color: #41cccc;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center; /* Center vertically */  
+    justify-content: center; /* Center horizontally */  
+    position: absolute; /* Position absolutely within the container */  
+    top: 20px; /* Move to the top */  
+    right: 150px; /* Move to the right */  
+  }
    
+
+  

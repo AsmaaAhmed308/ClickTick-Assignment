@@ -7,14 +7,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
   transform(items: any[], searchText: string): any[] {
-    if (!items) return [];
-    if (!searchText) return [];
-    if (searchText == "") return items;
-
-    searchText = searchText.toLowerCase();
-
-    return items.filter(it => {
-      return it.toLowerCase().includes(searchText);
-    });
-  }
+    debugger;  
+    if (items.length > 0 && searchText) {  
+        if (searchText === "") return items;  
+        searchText = searchText.toLowerCase();  
+        return items.filter(ele => {  
+            const titleMatch = ele.title && ele.title.toLowerCase().includes(searchText);  
+            const descriptionMatch = ele.description && ele.description.toLowerCase().includes(searchText);  
+            return titleMatch || descriptionMatch;  
+        });  
+    } else {  
+        return items;  
+    }  
+}
 }

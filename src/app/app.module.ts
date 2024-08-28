@@ -9,7 +9,6 @@ import { FilterPipe } from './pipe/search-filter.pipe';
 
 @NgModule({  
   declarations: [  
-    FilterPipe,
     AppComponent  
   ],  
   imports: [  

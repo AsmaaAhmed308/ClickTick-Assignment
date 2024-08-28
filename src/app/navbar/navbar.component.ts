@@ -16,6 +16,7 @@ export class NavbarComponent {
   @Output() searchTextFitration: EventEmitter<string> = new EventEmitter<string>();
   SearchTextFitrationVal : any
    currentRouting  : any
+   addToCartCount : number = 3
   constructor(private router: Router , private _ActivatedRoute: ActivatedRoute ) { 
     debugger
     this.currentRouting = +this._ActivatedRoute.snapshot.params['id']

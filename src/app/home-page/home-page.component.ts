@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Product } from '../model/product-list.model'
 import { NavbarComponent } from '../navbar/navbar.component';
+import { FilterPipe } from '../pipe/search-filter.pipe';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [HttpClientModule, FormsModule, CommonModule,NavbarComponent], // Add HttpClientModule here  
+  imports: [HttpClientModule, FormsModule, CommonModule,NavbarComponent , FilterPipe], // Add HttpClientModule here  
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
