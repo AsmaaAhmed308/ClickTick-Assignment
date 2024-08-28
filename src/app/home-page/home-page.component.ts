@@ -4,11 +4,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Product } from '../model/product-list.model'
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [HttpClientModule, FormsModule, CommonModule], // Add HttpClientModule here  
+  imports: [HttpClientModule, FormsModule, CommonModule,NavbarComponent], // Add HttpClientModule here  
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
@@ -22,6 +23,7 @@ export class HomePageComponent {
   categories : any[] =[];  
   selectedCategory: any
   CartList  : Product[] = [];  
+  searchText : any
   constructor(private router: Router, private _HttpClient: HttpClient) { }
 
   ngOnInit() {  
@@ -34,6 +36,11 @@ export class HomePageComponent {
   ngOnDestroy() {  
   }  
   //----------------------
+  getSearchText(text: string){
+     this.searchText = text;
+     console.log(' this.searchText ',  this.searchText  )
+  }
+  //-----------------------
   getProducts(){
     this._HttpClient.get(this.ProductDataUrl).subscribe(response => {
       if (response) {

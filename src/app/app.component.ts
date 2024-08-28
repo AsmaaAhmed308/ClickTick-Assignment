@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
@@ -11,4 +11,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 })
 export class AppComponent {
   title = 'ProductList';
-}
+  currentRouting : any
+
+  constructor(  ) { 
+  
+  }
+
+
+  ngOnInit() {  
+  }
+
+  }  

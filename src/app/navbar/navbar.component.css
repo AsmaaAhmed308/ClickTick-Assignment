@@ -1,4 +1,5 @@
 .navbar {  
+    font-family: sans-serif;
     display: flex;  
     justify-content: space-between;  
     align-items: center;  
@@ -44,3 +45,25 @@
     color: white; /* Optional: Change text color on hover */  
     transform: scale(1.05); /* Slightly scale up the element on hover */  
 }
+
+.cart-icon {  
+    display: contents;  
+  }  
+  
+
+  
+input[type=text] {
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white; 
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    margin:  0 15px;
+    background-image: url('../../assets/search-icon.png');
+
+  }
+   

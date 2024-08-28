@@ -5,11 +5,12 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule  
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [HttpClientModule, FormsModule, CommonModule], // Add HttpClientModule here  
+  imports: [HttpClientModule, FormsModule, CommonModule,NavbarComponent], // Add HttpClientModule here  
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -61,7 +62,7 @@ export class LoginComponent {
     if (this.loginUserAuthenticationData) {
       console.log('Succesful , Authentication is exisit')
       this.showDangerMessage = false;
-      this.router.navigate(['/HomePage']);  
+      this.router.navigate(['/HomePage/2']);  
     }
 
     else {

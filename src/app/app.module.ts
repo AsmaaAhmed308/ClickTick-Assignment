@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routes';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FilterPipe } from './pipe/search-filter.pipe';
 
 @NgModule({  
   declarations: [  
+    FilterPipe,
     AppComponent  
   ],  
   imports: [  
