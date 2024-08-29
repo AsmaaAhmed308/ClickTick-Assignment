@@ -1,6 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartItems, CartProducts, Product } from '../model/product-list.model'
@@ -8,11 +6,13 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { FilterPipe } from '../pipe/search-filter.pipe';
 import { catchError } from 'rxjs';
 import { HomePageService } from './home-page.service';
+import { Component } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [ FormsModule, CommonModule, NavbarComponent, FilterPipe, HomePageService], // Add HttpClientModule here  
+  imports: [ FormsModule, CommonModule, NavbarComponent, FilterPipe, HttpClientModule ], 
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
   providers: [HomePageService]
@@ -36,8 +36,7 @@ export class HomePageComponent {
 
   constructor( private router: Router, 
                private _HttpClient: HttpClient, 
-               private route: ActivatedRoute,
-               private _HomePageService : HomePageService) { }
+               private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -165,5 +164,39 @@ export class HomePageComponent {
     console.log('CartItems v:', this.CartItems);
   }
 
-  handelError(){}
+  get paginatedProducts(): any[] {  
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;  
+    return this.ProductList.slice(startIndex, startIndex + this.itemsPerPage);  
+  }  
+
+  totalPages(): number {  
+    return Math.ceil(this.ProductList.length / this.itemsPerPage);  
+  }  
+  itemsPerPage : number = 4
+  currentPage: number  = 1
+  firstPage: number  = 1
+  SecPage: number  = 2
+  thirdPage: number  = 3
+  goToPage(page: number, flagStep : number): void {  
+    this.currentPage = page;  
+    if(flagStep == 1) // move forward'
+    {
+      this.firstPage = this.firstPage +1 
+      this.SecPage = this.SecPage +1 
+      this.thirdPage = this.thirdPage +1 
+
+    }
+    if(flagStep == -1) // move Back'
+    {
+      this.firstPage = this.firstPage -1 
+      this.SecPage = this.SecPage  -1 
+      this.thirdPage = this.thirdPage  -1 
+    }
+
+  }  
+
+  setCurrentPage(pageNo: number){
+    this.currentPage = pageNo
+  }
+ 
 }

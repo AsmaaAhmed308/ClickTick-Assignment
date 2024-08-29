@@ -18,7 +18,7 @@
         </div>
 
         <!-- Second Section: Product Cards -->
-        <div class="product-cards">
+        <!-- <div class="product-cards">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <div class="card" *ngFor="let item of ProductList  | filter: searchText">
                     <img [src]="item.images[0]" alt="{{ item.title }}" class="card-image" />
@@ -43,14 +43,63 @@
                         <div>
                             <span>In Stock :</span>
                             <span class="more-card-info">{{ item.stock }}</span>
-                        </div>
-                        <!-- <div> 
-                            <img src="../../assets/cart-icon.png" alt="Rating Stars" />  
-                        </div> -->
+                        </div>  
                         <button class="add-to-cart-button" (click)="addToCart(item)"> Add to Cart </button>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+    
+        <div class="product-cards">  
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">  
+              <div class="card" *ngFor="let item of paginatedProducts | filter: searchText">  
+                <img [src]="item.images[0]" alt="{{ item.title }}" class="card-image" />  
+                <div class="card-content">  
+                  <h2 class="card-title">{{ item.title }}</h2>  
+                  <div class="card-description">  
+                    <p>{{ item.description }}</p>  
+                  </div>  
+                  <div>  
+                    <span class="more-card-info Price-after-discount"> {{ item.discountPercentage }} <span  
+                        style="font-weight: normal;">USD</span>  
+                    </span>  
+                    <span class="more-card-info"> {{ item.price }} </span>  
+                    <span>USD</span>  
+                  </div>  
+                  <div>  
+                    <span>Brand :</span>  
+                    <span class="more-card-info">{{ item.brand }}</span>  
+                  </div>  
+                  <div>  
+                    <span>Category :</span>  
+                    <span class="more-card-info">{{ item.category }}</span>  
+                  </div>  
+                  <div>  
+                    <span>In Stock :</span>  
+                    <span class="more-card-info">{{ item.stock }}</span>  
+                  </div>  
+                  <button class="add-to-cart-button" (click)="addToCart(item)">Add to Cart</button>  
+                </div>  
+              </div>  
+            </div>  
+          
+            <!-- Pagination Controls -->  
+            <!-- <div class="pagination">  
+              <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>  
+              <span>Page {{ currentPage }} of {{ totalPages() }}</span>  
+              <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages()">Next</button>  
+            </div>   -->
+            
+<div class="pagination">
+  <a (click)="goToPage(currentPage - 1, -1 )">&laquo;</a>
+  <a (click)="goToPage(firstPage,0)">{{firstPage}}</a>
+  <a (click)="goToPage(SecPage,0)" class="active">{{SecPage}}</a>
+  <a (click)="goToPage(thirdPage,0)">{{thirdPage}}</a>
+  <a>of {{ totalPages() }}</a>
+  <a (click)="goToPage(currentPage + 1, +1)" >&raquo;</a>
+</div>
+           
+
+          </div>
     </div>
 </div>

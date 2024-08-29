@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/internal/Subject';
 import { HttpClient } from '@angular/common/http';
@@ -6,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login',
