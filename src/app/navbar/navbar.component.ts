@@ -15,19 +15,13 @@ export class NavbarComponent {
   @Input()  PageMode : string = ''
   @Output() searchTextFitration: EventEmitter<string> = new EventEmitter<string>();
   SearchTextFitrationVal : any
-   currentRouting  : any
-   addToCartCount : number = 3
-  constructor(private router: Router , private _ActivatedRoute: ActivatedRoute ) { 
-    debugger
-    this.currentRouting = +this._ActivatedRoute.snapshot.params['id']
-    console.log('this.currentRouting : '  ,  this.currentRouting)
-  }
+   currentRouting  : any 
+   @Input() CartItemsCount : number = 0
+  constructor(private router: Router ) {}
   goToHomePage(){
-    this.router.navigate(['/HomePage/2']);  
   }
 
   goToLoginPage(){
-    this.router.navigate(['/login/1']);  
   }
 
   setSearchTextFitration(){

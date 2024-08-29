@@ -76,8 +76,8 @@ input[type=text] {
     align-items: center; /* Center vertically */  
     justify-content: center; /* Center horizontally */  
     position: absolute; /* Position absolutely within the container */  
-    top: 20px; /* Move to the top */  
-    right: 150px; /* Move to the right */  
+    top:15px; /* Move to the top */  
+    right: 180px; /* Move to the right */  
   }
    
 

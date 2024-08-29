@@ -62,7 +62,7 @@ export class LoginComponent {
     if (this.loginUserAuthenticationData) {
       console.log('Succesful , Authentication is exisit')
       this.showDangerMessage = false;
-      this.router.navigate(['/HomePage/2']);  
+      this.router.navigate([`/HomePage/${this.loginUserAuthenticationData.id}`]);   
     }
 
     else {
