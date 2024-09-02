@@ -177,7 +177,7 @@ export class HomePageComponent {
   firstPage: number  = 1
   SecPage: number  = 2
   thirdPage: number  = 3
-  goToPage(page: number, flagStep : number): void {  
+  goToPage(page: number, flagStep ?: number): void {  
     this.currentPage = page;  
     if(flagStep == 1) // move forward'
     {
