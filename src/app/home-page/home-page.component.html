@@ -8,20 +8,55 @@
 </head>
 
 <body>
-  <div class="grid-container">
-    <div class="grid-item">  
+  
+
+
+  <div class="grid-container">  
+
+    <div class="grid-category">  
       <h4 class="text-2xl font-bold mb-4">Products</h4>  
-      <div class="category-grid">  
-          <div class="radio-buttons">  
-              <label class="container" *ngFor="let category of categories">  
-                  <input type="radio" name="category" [value]="category" class="mr-2"  
-                      (click)="filterProductsByCategory(category)" />  
-                  {{ category.categoryName }} ({{ category.categoryCount }})  
-              </label>  
-          </div>  
+        <div class="radio-buttons">  
+          <label class="container" *ngFor="let category of categories">  
+            <input type="radio" name="category" [value]="category" class="mr-2"  
+              (click)="filterProductsByCategory(category)" />  
+            {{ category.categoryName }} ({{ category.categoryCount }})  
+          </label>  
+        </div>  
+    </div>  
+    <!--===================================================-->  
+    <div class="grid-products-container">  
+      <div class="card" *ngFor="let item of paginatedProducts | filter: searchText">  
+        <img [src]="item.images[0]" alt="{{ item.title }}" class="card-image" />  
+            <!-- <div class="card-content">
+              <h2 class="card-title">{{ item.title }}</h2>
+              <div class="card-description">
+                <p>{{ item.description }}</p>
+              </div>
+              <div>
+                <span class="more-card-info Price-after-discount"> {{ item.discountPercentage }} <span
+                    style="font-weight: normal;">USD</span>
+                </span>
+                <span class="more-card-info"> {{ item.price }} </span>
+                <span>USD</span>
+              </div>
+              <div>
+                <span>Brand :</span>
+                <span class="more-card-info">{{ item.brand }}</span>
+              </div>
+              <div>
+                <span>Category :</span>
+                <span class="more-card-info">{{ item.category }}</span>
+              </div>
+              <div>
+                <span>In Stock :</span>
+                <span class="more-card-info">{{ item.stock }}</span>
+              </div>
+              <button class="add-to-cart-button" (click)="addToCart(item)">Add to Cart</button>
+            </div> -->
       </div>  
-  </div>
-  </div>
+    </div>  
+
+</div>  
 </body>
 
 </html>
