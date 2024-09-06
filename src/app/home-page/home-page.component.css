@@ -18,7 +18,8 @@ body {
   padding: 16px; /* Padding around the grid */  
 }  
 
-.category {  
+
+.grid-category {  
   background-color: #ffffff;  
   color: black;  
   text-align: center;  
@@ -54,7 +55,8 @@ body {
 }  
 
 .card-image {  
-  width: 100%;  
+  width: fit-content;  
+  text-align: center;
   height: 12rem; /* Equivalent to h-48 */  
   object-fit: cover; /* Ensures the image covers the area */  
 }  
@@ -65,22 +67,69 @@ body {
 
 
 
+.card-content {  
+  padding: 1rem; /* Equivalent to p-4 */  
+}  
+
+.card-title {  
+  font-size: 1.125rem; /* Equivalent to text-lg */  
+  font-weight: 600; /* Equivalent to font-semibold */  
+}  
+
+.card-description {
+  height: 150px;  
+  color: #4a5568; /* Equivalent to text-gray-600 */  
+}
+
+
+.add-to-cart-button {
+  background-color: #41cccc; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%
+}
+
+.more-card-info{
+    font-weight: bold;
+    color: #303031;
+    font-size: 15px;
+}
+
+.Price-after-discount{
+  text-decoration: line-through;
+  margin-right: 15px;
+}
+
+
+
+
 /* Responsive styles */  
 
-@media (min-width: 900px) {  
+ 
+
+@media (min-width: 0px) and (max-width: 450px){  
   .grid-container {  
-    grid-template-columns: 10% 90%; /* 2 columns at 50% each */  
+    grid-template-columns:  100%; /* 2 columns at 50% each for smaller screens */  
   }  
 
-  .grid-products-container {
-    grid-template-columns: repeat(4, 1fr);  /* 2 columns at 50% each */  
-  }
+  .grid-products-container {  
+    grid-template-columns: repeat(1, 1fr); /* 2 columns on small screens */  
+  } 
+  .radio-buttons {  
+    display: ruby;  
+  } 
 }  
 
 
-
-
-@media (max-width: 1042px) {  
+@media (min-width: 451px) and (max-width: 1277px){  
   .grid-container {  
     grid-template-columns:  100%; /* 2 columns at 50% each for smaller screens */  
   }  
@@ -93,20 +142,11 @@ body {
   } 
 }  
 
+ 
+
+
+  
 
 
 
-@media (max-width: 480px) {  
-  .grid-container {  
-    grid-template-columns: 100%; /* 1 column at 100% for extra small screens */  
-  }  
-
-  .grid-products-container {  
-    grid-template-columns: repeat(2, 1fr); /* 1 column on extra small screens */  
-  } 
-
-  .radio-buttons {  
-    display: ruby;  
-  } 
-}  
  

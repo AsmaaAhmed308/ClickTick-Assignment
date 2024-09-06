@@ -172,7 +172,7 @@ export class HomePageComponent {
   totalPages(): number {  
     return Math.ceil(this.ProductList.length / this.itemsPerPage);  
   }  
-  itemsPerPage : number = 4
+  itemsPerPage : number =50
   currentPage: number  = 1
   firstPage: number  = 1
   SecPage: number  = 2

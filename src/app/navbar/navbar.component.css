@@ -1,84 +1,222 @@
-.navbar {  
+.navbar {
     font-family: sans-serif;
-    display: flex;  
-    justify-content: space-between;  
-    align-items: center;  
-    padding: 10px 20px;  
-    background-color: rgba(247, 247, 247, 0.47); /* Semi-transparent background color */  
-    border-bottom: 2px solid #ccc; /* Bottom border */  
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */  
-}  
-
-.navbar-left, .navbar-right {  
-    display: flex;  
-    align-items: center;  
-}  
-
-.logo {  
-    position: relative; /* Position relative for absolute positioning of the logo */  
-    margin-right: 15px; /* Space between logo and text */  
-    padding: 10px 15px; /* Add some padding for better hover area */  
-    border-radius: 5px; /* Rounded corners for a smoother look */  
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */  
-}  
-
-.logo svg {  
-    position: absolute; /* Position the SVG logo absolutely */  
-    left: 0; /* Align to the left */  
-    top: 50%; /* Center vertically */  
-    transform: translateY(-50%); /* Adjust for vertical centering */  
-    opacity: 0.2; /* Make the logo semi-transparent */  
-    width: 30px; /* Adjust size as needed */  
-    height: 30px; /* Adjust size as needed */  
-}  
-
-.tab {  
-    margin: 0 15px; /* Space between items */  
-    cursor: pointer; /* Change cursor to pointer on hover */  
-    padding: 10px 15px; /* Add some padding for better hover area */  
-    border-radius: 5px; /* Rounded corners for a smoother look */  
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */  
-}  
-
-.logo:hover, .tab:hover {  
-    background-color: gray; /* Change background color on hover */  
-    color: white; /* Optional: Change text color on hover */  
-    transform: scale(1.05); /* Slightly scale up the element on hover */  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(247, 247, 247, 0.47);
+    /* Semi-transparent background color */
+    border-bottom: 2px solid #ccc;
+    /* Bottom border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Optional: subtle shadow for depth */
 }
 
-.cart-icon {  
-    display: contents;  
-  }  
-  
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
 
-  
+.logo {
+    position: relative;
+    /* Position relative for absolute positioning of the logo */
+    margin-right: 15px;
+    /* Space between logo and text */
+    padding: 10px 15px;
+    /* Add some padding for better hover area */
+    border-radius: 5px;
+    /* Rounded corners for a smoother look */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for background color and scale */
+}
+
+.logo svg {
+    position: absolute;
+    /* Position the SVG logo absolutely */
+    left: 0;
+    /* Align to the left */
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    /* Adjust for vertical centering */
+    opacity: 0.2;
+    /* Make the logo semi-transparent */
+    width: 30px;
+    /* Adjust size as needed */
+    height: 30px;
+    /* Adjust size as needed */
+}
+
+.tab {
+    margin: 0 15px;
+    /* Space between items */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    padding: 10px 15px;
+    /* Add some padding for better hover area */
+    border-radius: 5px;
+    /* Rounded corners for a smoother look */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for background color and scale */
+}
+
+.logo:hover,
+.tab:hover {
+    background-color: gray;
+    /* Change background color on hover */
+    color: white;
+    /* Optional: Change text color on hover */
+    transform: scale(1.05);
+    /* Slightly scale up the element on hover */
+}
+
+.cart-icon {
+    display: contents;
+    align-items: center;
+    /* Align items vertically */
+    /* position: relative; */
+    /* Position relative for the circle count */
+}
+
 input[type=text] {
     width: 50%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
-    background-color: white; 
-    background-position: 10px 10px; 
+    background-color: white;
+    background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    margin:  0 15px;
+    margin: 0 15px;
     background-image: url('../../assets/search-icon.png');
 
-  }
+}
 
- .circle-count {
+.circle-count {
     height: 20px;
     width: 20px;
     background-color: #41cccc;
     border-radius: 50%;
     display: inline-flex;
-    align-items: center; /* Center vertically */  
-    justify-content: center; /* Center horizontally */  
-    position: absolute; /* Position absolutely within the container */  
-    top:15px; /* Move to the top */  
-    right: 180px; /* Move to the right */  
-  }
-   
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    position: absolute;
+    /* Position absolutely within the container */
+    top: 15px;
+    /* Move to the top */
+    right: 180px;
+    /* Move to the right */
+}
 
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ 
+
+.navbar a:hover {
+    background-color: rgb(71, 67, 67);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 45px;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown-content {
+    display: block;
+}
+
+
+.logo-container {  
+    float: left;           /* Align the text to the left */  
+    display: none;
+}  
+
+.tab-container {  
+    float: right;           /* Align the text to the right */  
+    display: none;
+
+}  
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* .navbar { */
+        /* Stack items vertically */
+        /* flex-direction: column; */
+        /* Align items to the start */
+        /* align-items: flex-start; */
+    /* } */
+ 
+    .tab {
+        margin-left: 0;
+        /* Remove margin on smaller screens */
+        margin-right: 15px;
+        /* Maintain spacing between tabs */
+    }
+
+    .cart-icon {
+        justify-content: flex-end;
+        /* Align cart icon to the right */
+    }
+
+    .navbar-left,
+    .navbar-right {
+        display: none;
+    }
+
+    .tab-container , .logo-container {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+        /* Smaller logo on very small screens */
+    }
+
+    .tab {
+        font-size: 14px;
+        /* Smaller font size for tabs */
+    }
+
+    
+    .tab-container , .logo-container {
+        display: flex;
+    }
   
+    .navbar-left,
+    .navbar-right {
+        display: none;
+    }
+
+}

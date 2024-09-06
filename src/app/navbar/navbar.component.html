@@ -1,3 +1,6 @@
+ 
+
+
 <nav class="navbar">
     <div class="navbar-left">
         <span class="logo">ClickTick</span>
@@ -24,8 +27,22 @@
                 </g>
             </svg>
             <span class="circle-count">{{CartItemsCount}}</span>
-            <span class="tab">Account</span>
-
+            <span class="tab" (click)="toggleDropdown()">Account</span>
         </span>
     </div>
+
+     
+
+    <div class="logo-container">  
+        <span class="logo">ClickTick</span>  
+    </div>  
+    <div class="tab-container">  
+        <span class="tab" onclick="toggleDropdown()">Dropdown</span>  
+        <div class="dropdown-content" id="dropdownContent">  
+            <a href="#">Link 1</a>  
+            <a href="#">Link 2</a>  
+            <a href="#">Link 3</a>  
+        </div>  
+    </div>  
+
 </nav>
