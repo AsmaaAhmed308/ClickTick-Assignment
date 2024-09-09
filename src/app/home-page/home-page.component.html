@@ -1,10 +1,7 @@
- 
-
 <body>
   <app-navbar [PageMode]="'orders'" [CartItemsCount]="cartItemsCount"
-  (searchTextFitration)="getSearchText($event)"></app-navbar>
+    (searchTextFitration)="getSearchText($event)"></app-navbar>
   <div class="grid-container">
-   
     <div class="grid-category">
       <h4 class="text-2xl font-bold mb-4">Products</h4>
       <div class="radio-buttons">
@@ -20,34 +17,47 @@
       <div class="card" *ngFor="let item of paginatedProducts | filter: searchText">
         <img [src]="item.images[0]" alt="{{ item.title }}" class="card-image" />
         <div class="card-content">
-              <h2 class="card-title">{{ item.title }}</h2>
-              <div class="card-description">
-                <p>{{ item.description }}</p>
-              </div>
-              <div>
-                <span class="more-card-info Price-after-discount"> {{ item.discountPercentage }} <span
-                    style="font-weight: normal;">USD</span>
-                </span>
-                <span class="more-card-info"> {{ item.price }} </span>
-                <span>USD</span>
-              </div>
-              <div>
-                <span>Brand :</span>
-                <span class="more-card-info">{{ item.brand }}</span>
-              </div>
-              <div>
-                <span>Category :</span>
-                <span class="more-card-info">{{ item.category }}</span>
-              </div>
-              <div>
-                <span>In Stock :</span>
-                <span class="more-card-info">{{ item.stock }}</span>
-              </div>
-              <button class="add-to-cart-button" (click)="addToCart(item)">Add to Cart</button>
-            </div>
+          <h2 class="card-title">{{ item.title }}</h2>
+          <div class="card-description">
+            <p>{{ item.description }}</p>
+          </div>
+          <div>
+            <span class="more-card-info Price-after-discount"> {{ item.discountPercentage }} <span
+                style="font-weight: normal;">USD</span>
+            </span>
+            <span class="more-card-info"> {{ item.price }} </span>
+            <span>USD</span>
+          </div>
+          <div>
+            <span>Brand :</span>
+            <span class="more-card-info">{{ item.brand }}</span>
+          </div>
+          <div>
+            <span>Category :</span>
+            <span class="more-card-info">{{ item.category }}</span>
+          </div>
+          <div>
+            <span>In Stock :</span>
+            <span class="more-card-info">{{ item.stock }}</span>
+          </div>
+          <button class="add-to-cart-button" (click)="addToCart(item)">Add to Cart</button>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <div class="pagination-grid-container">
+    <div></div>
+    <div>
+      <!-- <h1>start pagination here</h1> -->
+      <div class="pagination">
+        <a (click)="goToPage(currentPage - 1, -1 )" class="px-2 py-1" [class.disabled]="currentPage <= 1"> « </a>
+        <a (click)="goToPage(firstPage,0)" class="active px-2 py-1">{{firstPage}}</a>
+        <span class="px-2 py-1"> of {{ totalPages() }}</span>
+        <a (click)="goToPage(currentPage + 1, +1)" class="px-2 py-1" [class.disabled]="currentPage >=  totalPages()"> »
+        </a>
       </div>
     </div>
-
   </div>
 
 </body>

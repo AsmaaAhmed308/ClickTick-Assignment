@@ -27,8 +27,9 @@
                 </g>
             </svg>
             <span class="circle-count">{{CartItemsCount}}</span>
-            <span class="tab" (click)="toggleDropdown()">Account</span>
+            <span class="tab" >Account</span>
         </span>
+        
     </div>
 
      
@@ -37,11 +38,13 @@
         <span class="logo">ClickTick</span>  
     </div>  
     <div class="tab-container">  
-        <span class="tab" onclick="toggleDropdown()">Dropdown</span>  
-        <div class="dropdown-content" id="dropdownContent">  
-            <a href="#">Link 1</a>  
-            <a href="#">Link 2</a>  
-            <a href="#">Link 3</a>  
+        
+        <span class="tab" (click)="toggleDropdown()">Dropdown</span> 
+        <!-- <img  src="../../assets/dropdown-icon.png"  /> -->
+ 
+        <div class="dropdown-content" id="dropdownContent" *ngIf="isDropdownOpen">  
+            <a>Home</a>  
+            <a>Account</a>   
         </div>  
     </div>  
 

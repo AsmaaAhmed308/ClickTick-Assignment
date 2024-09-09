@@ -11,6 +11,14 @@ body {
   padding: 10px;  
 }  
 
+
+.pagination-grid-container {  
+  display: grid;  
+  grid-template-columns:  10% 90%; /* 2 columns at 50% each for smaller screens */  
+  gap: 10px;  
+  padding: 10px;  
+}  
+
 .grid-products-container {  
   display: grid;  
   grid-template-columns: repeat(4, 1fr); /* 4 columns */  
@@ -110,7 +118,56 @@ body {
 
 
 
+.pagination {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  margin-top: 20px;  
+}  
 
+.pagination button {  
+  padding: 8px 12px;  
+  margin: 0 5px;  
+  cursor: pointer;  
+}  
+
+.pagination button:disabled {  
+  cursor: not-allowed;  
+  opacity: 0.5;  
+}
+ 
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  background-color: #ddd;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+.disabled {  
+  pointer-events: none; /* Prevents click events */  
+  color: gray; /* Change color to indicate it's disabled */  
+  cursor: not-allowed; /* Change cursor to indicate it's disabled */  
+}  
 /* Responsive styles */  
 
  
@@ -120,6 +177,10 @@ body {
     grid-template-columns:  100%; /* 2 columns at 50% each for smaller screens */  
   }  
 
+  .pagination-grid-container{
+    grid-template-columns:  10% 90%; /* 2 columns at 50% each for smaller screens */  
+
+  }
   .grid-products-container {  
     grid-template-columns: repeat(1, 1fr); /* 2 columns on small screens */  
   } 
@@ -140,13 +201,11 @@ body {
   .radio-buttons {  
     display: ruby;  
   } 
-}  
-
- 
-
-
   
+  .pagination-grid-container{
+    grid-template-columns:  10% 90%; /* 2 columns at 50% each for smaller screens */  
 
-
+  }
+}  
 
  

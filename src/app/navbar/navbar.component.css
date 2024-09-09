@@ -74,9 +74,6 @@
 .cart-icon {
     display: contents;
     align-items: center;
-    /* Align items vertically */
-    /* position: relative; */
-    /* Position relative for the circle count */
 }
 
 input[type=text] {
@@ -155,12 +152,10 @@ input[type=text] {
 
 
 .logo-container {  
-    float: left;           /* Align the text to the left */  
     display: none;
 }  
 
 .tab-container {  
-    float: right;           /* Align the text to the right */  
     display: none;
 
 }  
@@ -169,12 +164,7 @@ input[type=text] {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* .navbar { */
-        /* Stack items vertically */
-        /* flex-direction: column; */
-        /* Align items to the start */
-        /* align-items: flex-start; */
-    /* } */
+   
  
     .tab {
         margin-left: 0;

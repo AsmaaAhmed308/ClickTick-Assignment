@@ -172,27 +172,27 @@ export class HomePageComponent {
   totalPages(): number {  
     return Math.ceil(this.ProductList.length / this.itemsPerPage);  
   }  
-  itemsPerPage : number =50
+  itemsPerPage : number =4
   currentPage: number  = 1
   firstPage: number  = 1
   SecPage: number  = 2
   thirdPage: number  = 3
+  flagStep :number = 0
+
   goToPage(page: number, flagStep ?: number): void {  
-    this.currentPage = page;  
+    this.currentPage = page; 
     if(flagStep == 1) // move forward'
-    {
+    {  
+      this.flagStep  = flagStep 
       this.firstPage = this.firstPage +1 
-      this.SecPage = this.SecPage +1 
-      this.thirdPage = this.thirdPage +1 
 
     }
     if(flagStep == -1) // move Back'
     {
+      this.flagStep  = flagStep 
       this.firstPage = this.firstPage -1 
-      this.SecPage = this.SecPage  -1 
-      this.thirdPage = this.thirdPage  -1 
     }
-
+console.log(' this.currentPage _' ,  this.currentPage  ,'totalPages()_ ',this.totalPages() )
   }  
 
   setCurrentPage(pageNo: number){
