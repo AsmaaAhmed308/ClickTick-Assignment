@@ -90,6 +90,22 @@ body {
 }
 
 
+.ratingStarDiv{
+  float: right;
+  font-size: 20px;
+}
+
+.reviewersCount{
+  color: #999289;
+
+}
+
+
+.starsCount{
+  color: #ffa62e;
+
+}
+
 .add-to-cart-button {
   background-color: #41cccc; /* Green */
   border: none;
@@ -99,7 +115,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 10px 2px;
   cursor: pointer;
   border-radius: 8px;
   width: 100%

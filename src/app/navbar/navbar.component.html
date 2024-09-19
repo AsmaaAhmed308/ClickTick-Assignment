@@ -39,8 +39,9 @@
     </div>  
     <div class="tab-container">  
         
-        <span class="tab" (click)="toggleDropdown()">Dropdown</span> 
-        <!-- <img  src="../../assets/dropdown-icon.png"  /> -->
+        <!-- <span class="tab" (click)="toggleDropdown()">Dropdown</span>  -->
+         
+        <img  src="/dropdown-icon.png"  alt="Dropdown Icon"  (click)="toggleDropdown()"   class="tab"/>
  
         <div class="dropdown-content" id="dropdownContent" *ngIf="isDropdownOpen">  
             <a>Home</a>  

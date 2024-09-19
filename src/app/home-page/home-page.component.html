@@ -40,6 +40,13 @@
             <span>In Stock :</span>
             <span class="more-card-info">{{ item.stock }}</span>
           </div>
+
+          <div class="ratingStarDiv">
+            <img  src="/star-icon.png"  alt="reviews"  />
+            <span class="starsCount" >{{ item.reviews[0].rating  }}  </span>
+            <span class="reviewersCount">({{ item.reviews.length }}) </span>
+          </div>
+
           <button class="add-to-cart-button" (click)="addToCart(item)">Add to Cart</button>
         </div>
       </div>
